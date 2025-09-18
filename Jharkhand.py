@@ -18,6 +18,10 @@ st.markdown(
         h1, h2, h3, h4, h5, h6 {
             color: #00FF7F; /* Greenish title color */
         }
+        /* make image captions more readable on dark bg */
+        .stImage > figcaption {
+            color: #ddd !important;
+        }
     </style>
     """,
     unsafe_allow_html=True
@@ -100,4 +104,7 @@ if st.button("🔍 Get Recommendation"):
     st.success(f"✅ Recommended Crop for **{state} - {region} ({season} season)**: **{crop}**")
     
     if crop in crop_images:
-        st.image(crop_images[crop], caption=f"{crop} grown in {state} - {region}", use_column_width=True)
+        # <--- replaced deprecated use_column_width with use_container_width
+        st.image(crop_images[crop], caption=f"{crop} grown in {state} - {region}", use_container_width=True)
+    else:
+        st.info("No image available for the recommended crop.")
