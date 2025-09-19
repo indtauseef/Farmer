@@ -37,6 +37,7 @@ else:
     region = "General"
 
 season = st.selectbox("Select Season", ["Kharif", "Rabi", "Zaid"])
+soiltype = st.selectbox("Select Season",["alluvial soil","loamy soil","clayey soil","black soil","Sandy soil")
 water = st.selectbox("Water Availability", ["Low", "Medium", "High"])
 land_size = st.selectbox("Land Size", ["Small", "Medium", "Large"])
 budget = st.selectbox("Budget", ["Low", "Medium", "High"])
@@ -70,9 +71,10 @@ def recommend_crop(state, region, season, water, land_size, budget, previous_cro
                 return "Rice"
             else:
                 return "Maize"
+            
         
         elif region == "East UP" and season == "Rabi":
-            if water == "Low":
+            if water == "low" and soiltype == "loamy soil":
                 return "Mustard"
             elif water == "Medium":
                 return "Wheat"
