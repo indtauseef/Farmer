@@ -37,7 +37,7 @@ else:
     region = "General"
 
 season = st.selectbox("Select Season", ["Kharif", "Rabi", "Zaid"])
-soiltype = st.selectbox("Select Season",["alluvial soil","loamy soil","clayey soil","black soil","Sandy soil")
+soiltype = st.selectbox("Select Season",["alluvial soil","loamy soil","clayey soil","black soil","Sandy soil"])
 water = st.selectbox("Water Availability", ["Low", "Medium", "High"])
 land_size = st.selectbox("Land Size", ["Small", "Medium", "Large"])
 budget = st.selectbox("Budget", ["Low", "Medium", "High"])
